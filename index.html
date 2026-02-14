@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Pretty 🌸</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body {
+  background: linear-gradient(135deg, #ff6cb3, #9acbff);
+  font-family: 'Poppins', sans-serif;
+  color: #2c2c2c;
+  overflow-x: hidden;
+}
+
+/* floating hearts */
+.heart {
+  position: fixed;
+  bottom: -20px;
+  font-size: 20px;
+  animation: floatUp 8s linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 0.7; }
+  100% { transform: translateY(-100vh); opacity: 0; }
+}
+
+.container {
+  padding-top: 80px;
+  padding-bottom: 60px;
+  animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+.title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+}
+
+.card {
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: none;
+}
+
+.btn-custom {
+  border-radius: 30px;
+  padding: 10px 30px;
+  background: #ff4fa3;
+  color: white;
+  border: none;
+  box-shadow: 0 0 15px rgba(255, 79, 163, 0.6);
+  transition: 0.3s ease;
+}
+
+.btn-custom:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 79, 163, 0.9);
+}
+
+.hidden-message {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.8s ease;
+}
+
+.hidden-message.show {
+  opacity: 1;
+  max-height: 500px;
+  margin-top: 20px;
+}
+
+.gallery img {
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: 0.4s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.footer-text {
+  margin-top: 50px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+</style>
+</head>
+
+<body>
+
+<script>
+/* create floating hearts */
+for(let i=0;i<15;i++){
+  let heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "💖";
+  heart.style.left = Math.random()*100 + "vw";
+  heart.style.animationDuration = (5 + Math.random()*5) + "s";
+  document.body.appendChild(heart);
+}
+</script>
+
+<div class="container text-center">
+
+<h1 class="title">Hey Pretty 🌷</h1>
+
+<p class="mt-4">
+One random morning I decided to text you, and I’m really glad I did.  
+Talking to you again is something I appreciate a lot.
+</p>
+
+<p>
+Even though we don’t talk every day and we haven’t met again yet,  
+I still think you are a very special person.
+</p>
+
+<p>
+So I made something small for you today,  
+just to wish you a happy Valentine’s Day 💫
+</p>
+
+<div class="card p-4 mt-4">
+
+<button class="btn btn-custom mt-3" onclick="revealMessage()">
+There is something I want to say
+</button>
+
+<div id="secret" class="hidden-message">
+
+<p>
+I know we are both busy with our lives, and I am not trying to rush anything.
+</p>
+
+<p>
+I just want you to know that I have always admired you,  
+and I still think you are an amazing person.
+</p>
+
+<p>
+No pressure and no expectations.  
+This is just me wishing you a beautiful Valentine’s Day 🌸
+</p>
+
+</div>
+</div>
+
+<h4 class="mt-5">Some of my favourite pictures of you </h4>
+
+<div class="row gallery mt-4">
+<div class="col-md-4 mb-3"><img src="pretty1.jpg" class="img-fluid"></div>
+<div class="col-md-4 mb-3"><img src="pretty2.jpg" class="img-fluid"></div>
+<div class="col-md-4 mb-3"><img src="pretty3.jpg" class="img-fluid"></div>
+<div class="col-md-4 mb-3"><img src="pretty4.jpg" class="img-fluid"></div>
+<div class="col-md-4 mb-3"><img src="pretty5.jpg" class="img-fluid"></div>
+</div>
+
+<div class="footer-text">
+🌸 Happy Valentine’s Day, Pretty 🌸
+</div>
+
+</div>
+
+<script>
+function revealMessage() {
+  document.getElementById("secret").classList.add("show");
+}
+</script>
+
+</body>
+</html>
